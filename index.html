@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsFast - Direct WhatsApp Sender</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 30px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+
+        h4 {
+            font-size: 3.7rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 500px;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+   
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        select, input, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 1.0rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+      
+
+        button {
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #00e676, #00c853);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+      
+
+  
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <h4>  Rapido</h4>
+      <style="font-size:0.5rem;"> Direct Whatsapp Message</style>
+        <h3 style="color:yellow;">👉 SEND NOW 💾 Save Later ⏰️</h3>
+        <label for="countryCode">Select Country:</label>
+        <select id="countryCode">
+            <option value="20" selected>🇪🇬 Egypt (+20)</option>
+            <option value="1">🇺🇸 USA (+1)</option>
+            <option value="44">🇬🇧 UK (+44)</option>
+            <option value="91">🇮🇳 India (+91)</option>
+            <option value="971">🇦🇪 UAE (+971)</option>
+            <option value="33">🇫🇷 France (+33)</option>
+            <option value="49">🇩🇪 Germany (+49)</option>
+        </select>
+
+        <input  style="width:93%;" type="text" id="phoneNumber" placeholder="Enter phone number">
+        <textarea style="width:93%;" id="message" placeholder="Enter your message"></textarea>
+        <button onclick="sendMessage()">Send via WhatsApp</button>
+    </div>
+
+    <footer>
+        © Copyright 2025 | Dr. Peter Ramsis Tawfeek
+    </footer>
+
+    <script>
+        function sendMessage() {
+            let countryCode = document.getElementById('countryCode').value;
+            let phone = document.getElementById('phoneNumber').value.trim();
+            let message = encodeURIComponent(document.getElementById('message').value.trim());
+            
+            if (phone) {
+                let fullNumber = countryCode + phone;
+                let url = `https://wa.me/${fullNumber}?text=${message}`;
+                window.open(url, '_blank');
+            } else {
+                alert("Please enter a valid phone number.");
+            }
+        }
+    </script>
+
+</body>
+</html>
