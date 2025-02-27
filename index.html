@@ -120,32 +120,46 @@
     <footer>
         © Copyright 2025 | Dr. Peter Ramsis Tawfeek
     </footer>
-    <script>
-        function sendMessage() {
-            let countryCode = document.getElementById('countryCode').value;
-            let phone = document.getElementById('phoneNumber').value.trim();
-            let message = encodeURIComponent(document.getElementById('message').value.trim());
-            
-            if (phone) {
-                let fullNumber = countryCode + phone;
-                let url = `https://wa.me/${fullNumber}?text=${message}`;
-                window.open(url, '_blank');
-            } else {
-                alert("Please enter a valid phone number.");
-            }
-        }
 
-        if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-    });
-}
+        <script>
+    function sendMessage() {
+        let countryCode = document.getElementById('countryCode').value;
+        let phone = document.getElementById('phoneNumber').value.trim();
+        let message = document.getElementById('message').value.trim();
+
+        if (phone) {
+            let fullNumber = countryCode + phone;
+            let url = `https://wa.me/${fullNumber}?text=${encodeURIComponent(message)}`;
+
+            // Check if the navigator.share API is available
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Send via WhatsApp',
+                    text: message,
+                    url: url
+                })
+                .then(() => console.log('Message shared successfully'))
+                .catch((error) => console.log('Error sharing message:', error));
+            } else {
+                // Fallback to opening WhatsApp directly in a new tab
+                window.open(url, '_blank');
+            }
+        } else {
+            alert("Please enter a valid phone number.");
+        }
+    }
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        });
+    }
     </script>
 </body>
 </html>
