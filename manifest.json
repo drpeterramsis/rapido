@@ -2,7 +2,7 @@
     "name": "Rapido",
     "short_name": "Rapido",
     "description": "Fast Direct WhatsApp Message © Dr.Peter Ramsis",
-    "start_url": "/",
+   "start_url": "https://drpeterramsis.github.io/rapido/"
     "display": "standalone",
     "background_color": "#03871c",
     "theme_color": "#03871c",
