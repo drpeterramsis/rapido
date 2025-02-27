@@ -13,30 +13,30 @@
     <meta property="og:title" content="Rapido" />
     <meta property="og:description" content="Fast Direct WhatsApp Message © Dr.Peter Ramsis" />
     <style>
- body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #006400, #004d00); /* Dark green gradient */
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 30px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #006400, #004d00); /* Dark green gradient */
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 10px; /* Reduced padding */
+            min-height: 0vh; /* Ensure the body takes at least the full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         h4 {
             font-size: 3.7rem;
-            margin-bottom: 5px;
+            margin-bottom: 0; /* Remove extra space below the heading */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .container {
             background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 20px; /* Reduced padding */
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             width: 90%;
@@ -44,6 +44,7 @@
             transform-style: preserve-3d;
             transform: perspective(1000px) rotateY(0deg);
             transition: transform 0.5s ease;
+            vertical-align: top;
         }
 
         label {
@@ -88,21 +89,19 @@
         }
 
         img {
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
+            border-radius: 50%; /* Makes the logo circular */
+            width: 15rem; /* Fixed width */
+            height: 15rem; /* Fixed height to match width for a perfect circle */
+            margin-bottom: 0px; /* Adds spacing below the image */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://raw.githubusercontent.com/drpeterramsis/rapido/main/logofw.png" alt="rapido">
-        <h4>Rapido</h4>
-        Direct Whatsapp Message
+        <!-- Replace Rapido heading with the image -->
+        <img src="https://raw.githubusercontent.com/drpeterramsis/rapido/main/logofw.png" alt="Rapido Logo">
+        <div>Direct Whatsapp Message</div>
         <h3 style="color:yellow;">👉 SEND NOW 💾 Save Later ⏰️</h3>
-        <label for="countryCode">Select Country:</label>
         <select id="countryCode">
             <option value="20" selected>🇪🇬 Egypt (+20)</option>
             <option value="1">🇺🇸 USA (+1)</option>
