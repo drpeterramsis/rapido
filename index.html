@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rapido | SEND NOW .. save later</title>
-     <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta property="og:image" content="https://drpeterramsis.github.io/rapido/icon-512x512.png" />
     <meta property="og:image:alt" content="Rapido" />
     <meta property="og:image:type" content="image/png" />
@@ -13,19 +13,19 @@
     <meta property="og:title" content="Rapido" />
     <meta property="og:description" content="Fast Direct WhatsApp Message © Dr.Peter Ramsis" />
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 30px;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items:center;
-        }
+ body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #006400, #004d00); /* Dark green gradient */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
         h4 {
             font-size: 3.7rem;
@@ -46,7 +46,6 @@
             transition: transform 0.5s ease;
         }
 
-   
         label {
             display: block;
             margin: 15px 0 5px;
@@ -66,10 +65,8 @@
             transition: all 0.3s ease;
         }
 
-      
-
         button {
-            background: linear-gradient(135deg, #00c853, #00e676);
+            background: linear-gradient(135deg, #03a346, #00e676);
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -90,16 +87,20 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
-      
-
-  
+        img {
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-      <h4>  Rapido</h4>
-      <style="font-size:0.5rem;"> Direct Whatsapp Message</style>
+        <img src="https://raw.githubusercontent.com/drpeterramsis/rapido/main/logofw.png" alt="rapido">
+        <h4>Rapido</h4>
+        Direct Whatsapp Message
         <h3 style="color:yellow;">👉 SEND NOW 💾 Save Later ⏰️</h3>
         <label for="countryCode">Select Country:</label>
         <select id="countryCode">
@@ -111,16 +112,13 @@
             <option value="33">🇫🇷 France (+33)</option>
             <option value="49">🇩🇪 Germany (+49)</option>
         </select>
-
-        <input  style="width:93%;" type="text" id="phoneNumber" placeholder="Enter phone number">
+        <input style="width:93%;" type="text" id="phoneNumber" placeholder="Enter phone number">
         <textarea style="width:93%;" id="message" placeholder="Enter your message"></textarea>
         <button onclick="sendMessage()">Send via WhatsApp</button>
     </div>
-
     <footer>
         © Copyright 2025 | Dr. Peter Ramsis Tawfeek
     </footer>
-
     <script>
         function sendMessage() {
             let countryCode = document.getElementById('countryCode').value;
@@ -136,6 +134,5 @@
             }
         }
     </script>
-
 </body>
 </html>
