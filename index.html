@@ -89,11 +89,13 @@
         }
 
         img {
-            border-radius: 50%; /* Makes the logo circular */
-            width: 15rem; /* Fixed width */
-            height: 15rem; /* Fixed height to match width for a perfect circle */
-            margin-bottom: 0px; /* Adds spacing below the image */
-        }
+    width: 15rem; /* Fixed width */
+    height: 9.5rem; /* Maintain aspect ratio */
+    margin-bottom: 0px; /* Adds spacing below the image */
+    object-fit: cover;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+    border-radius: 10px; /* Optional: Adds slightly rounded corners */
+}
     </style>
 </head>
 <body>
